@@ -1,0 +1,29 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h2>Build VM</h2>
+  <form action="" method="post" name="request">
+      <div class "form-group">
+      {{ form.hidden_tag() }}
+      <p>
+          VM Name:<br>
+          {{ form.vmname(size=80) }}<br>
+      </p>
+      	  Machine Size:
+      <br>
+      <div class="radio">
+	  {{ form.vmsize }}
+      <div>
+	 Operating System:
+      <br><br>
+      <div class="dropdown">
+	 {{ form.vmos }}
+      </div>
+      <br>
+      </div>
+      <button type="submit" class="btn btn-sucess">Build</button>
+  </form>
+</div>
+{% endblock %}
